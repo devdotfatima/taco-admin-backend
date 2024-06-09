@@ -145,11 +145,7 @@ const getTruckDetails = async (req, res) => {
 
     const truckData = Array.from(combinedResults.values());
 
-    if (truckData.length > 0) {
-      res.status(200).json(truckData);
-    } else {
-      res.status(404).json("Truck not found.");
-    }
+    res.status(200).json(truckData);
   } catch (error) {
     console.error("Error fetching truck details: ", error);
     res.status(500).json("Internal server error.");
